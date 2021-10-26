@@ -7,8 +7,10 @@ import {
   containerVariants,
   backVariants,
   arrowVariants,
-  buttonVariants,
   nextVariants,
+  buttonVariants,
+  nextButton,
+  nextColor,
   listItemVariants,
 } from "../variants/variants";
 
@@ -62,11 +64,16 @@ const Base = ({ addBase, pizza }) => {
       </ul>
 
       {pizza.base && (
-        <motion.div className="next" variants={nextVariants}>
+        <motion.div
+          className="next"
+          variants={nextVariants}
+          initial="hidden"
+          whileHover="hover"
+        >
           <Link to="/toppings">
-            <motion.button variants={buttonVariants} whileHover="hover">
-              Next
-            </motion.button>
+            <motion.span variants={nextColor}></motion.span>
+            <motion.span variants={nextButton}>&#8594;</motion.span>
+            <motion.button variants={buttonVariants}>Next</motion.button>
           </Link>
         </motion.div>
       )}
