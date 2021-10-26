@@ -58,6 +58,29 @@ export const containerVariants = {
   },
 };
 
+export const orderContainerVariants = {
+  hidden: {
+    y: -16,
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "tween",
+      delay: 0.5,
+      when: "beforeChildren",
+      staggerChildren: 0.4,
+    },
+  },
+  exit: {
+    x: "-100vw",
+    opacity: 0,
+    transition: {
+      ease: "easeInOut",
+    },
+  },
+};
 export const listItemVariants = {
   hidden: {
     color: "#fff",
@@ -74,14 +97,42 @@ export const listItemVariants = {
 };
 
 export const buttonVariants = {
+  hidden: {
+    content: "Next",
+  },
   hover: {
-    scale: 1.1,
-    opacity: 1,
-    textShadow: "0px 0px 4px rgb(255,255,255)",
-    boxShadow: "0px 0px 4px rgb(255,255,255)",
+    content: "",
+    scale: 1,
     transition: {
-      duration: 0.3,
+      duration: 1.5,
       yoyo: Infinity,
+    },
+  },
+};
+
+export const nextButton = {
+  hidden: {
+    width: 0,
+    x: -50,
+  },
+  hover: {
+    width: "100%",
+    x: 0,
+    transition: {
+      ease: [0.785, 0.135, 0.15, 0.86],
+    },
+  },
+};
+
+export const nextColor = {
+  hidden: {
+    x: -50,
+  },
+  hover: {
+    width: "100%",
+    x: 0,
+    transition: {
+      type: "tween",
     },
   },
 };
@@ -99,7 +150,23 @@ export const nextVariants = {
       stiffness: 60,
     },
   },
+  hover: {
+    color: "#010101",
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
 };
+
+export const childVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+  },
+};
+
 export const backVariants = {
   hover: {
     color: "#fbdd74",

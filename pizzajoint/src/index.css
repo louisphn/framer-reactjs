@@ -201,3 +201,37 @@ li span.active::before {
 .order h2 {
   margin-top: 32px;
 }
+
+.next {
+  position: relative;
+  overflow: hidden;
+  width: 104px;
+  height: 42px;
+  margin-top: 24px;
+}
+.next span {
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7f5af0;
+  font-size: 24px;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+}
+.next span:first-child {
+  background: #fff;
+}
+
+.next span:last-child {
+  z-index: 3;
+  backdrop-filter: grayscale(1);
+}
+
+.next button {
+  border-radius: 0;
+  margin-top: 0;
+}

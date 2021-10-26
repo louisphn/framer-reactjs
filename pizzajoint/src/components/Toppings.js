@@ -7,6 +7,9 @@ import {
   containerVariants,
   backVariants,
   arrowVariants,
+  nextVariants,
+  nextColor,
+  nextButton,
   buttonVariants,
   listItemVariants,
 } from "../variants/variants";
@@ -71,9 +74,16 @@ const Toppings = ({ addTopping, pizza }) => {
       </ul>
 
       <Link to="/order">
-        <motion.button variants={buttonVariants} whileHover="hover">
-          Order
-        </motion.button>
+        <motion.div
+          className="next"
+          variants={nextVariants}
+          initial="hidden"
+          whileHover="hover"
+        >
+          <motion.span variants={nextColor}></motion.span>
+          <motion.span variants={nextButton}>&#8594;</motion.span>
+          <motion.button variants={buttonVariants}>Next</motion.button>
+        </motion.div>
       </Link>
     </motion.div>
   );

@@ -1,38 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const containerVariants = {
-  hidden: {
-    y: -16,
-    opacity: 0,
-  },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: "tween",
-      delay: 0.5,
-      when: "beforeChildren",
-      staggerChildren: 0.4,
-    },
-  },
-  exit: {
-    x: "-100vw",
-    opacity: 0,
-    transition: {
-      ease: "easeInOut",
-    },
-  },
-};
-
-const childVariants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-  },
-};
+import { orderContainerVariants, childVariants } from "../variants/variants";
 
 const pathVariants = {
   hidden: {
@@ -48,7 +17,7 @@ const pathVariants = {
     fill: "#2cb67d",
     stroke: "#2cb67d",
     transition: {
-      default: { duration: 3, delay: 1.5, ease: "easeInOut" },
+      default: { duration: 5, delay: 1.5, ease: "easeInOut" },
     },
   },
 };
@@ -57,7 +26,7 @@ const Order = ({ pizza, setShowModal }) => {
   return (
     <motion.div
       className="container order"
-      variants={containerVariants}
+      variants={orderContainerVariants}
       initial="hidden"
       animate="visible"
       exit="exit"
