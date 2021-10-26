@@ -28,8 +28,8 @@ export const homeButtonVariants = {
   hover: {
     scale: 1.1,
     opacity: 1,
-    background: "#ff6e6c",
-    border: "2px solid #ff6e6c",
+    background: "#2cb67d",
+    border: "2px solid #2cb67d",
     transition: {
       duration: 0.3,
     },
