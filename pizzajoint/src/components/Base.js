@@ -21,7 +21,7 @@ const Base = ({ addBase, pizza }) => {
 
   return (
     <motion.div
-      className="base container"
+      className="base"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -53,6 +53,7 @@ const Base = ({ addBase, pizza }) => {
                 className={spanClass}
                 variants={listItemVariants}
                 whileHover="hover"
+                initial="hidden"
                 animate={pizza.base === base ? "selected" : "hidden"}
                 transition={{ duration: 0.6 }}
               >

@@ -17,7 +17,7 @@ const pathVariants = {
     fill: "#2cb67d",
     stroke: "#2cb67d",
     transition: {
-      default: { duration: 5, delay: 1.5, ease: "easeInOut" },
+      default: { duration: 3, delay: 1.5, ease: "easeInOut" },
     },
   },
 };
@@ -25,28 +25,12 @@ const pathVariants = {
 const Order = ({ pizza, setShowModal }) => {
   return (
     <motion.div
-      className="container order"
+      className="order"
       variants={orderContainerVariants}
       initial="hidden"
       animate="visible"
       exit="exit"
     >
-      {/* <svg
-        className="success-svg"
-        xmlns="http://www.w3.org/2000/svg"
-        height="36px"
-        viewBox="0 0 24 24"
-        width="36px"
-        fill="#000000"
-      >
-        <path d="M0 0h24v24H0V0z" fill="none" stroke="none" />
-        <motion.path
-          variants={pathVariants}
-          initial="hidden"
-          animate="visible"
-          d="M19.77 4.93l1.4 1.4L8.43 19.07l-5.6-5.6 1.4-1.4 4.2 4.2L19.77 4.93m0-2.83L8.43 13.44l-4.2-4.2L0 13.47l8.43 8.43L24 6.33 19.77 2.1z"
-        />
-      </svg> */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         height="56px"
