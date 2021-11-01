@@ -12,7 +12,7 @@ import {
   description,
   arrow,
   learnMore,
-} from "../lib/heroVariants";
+} from "../variants/heroVariants";
 
 const Hero = ({ currentY }) => {
   const history = useHistory();

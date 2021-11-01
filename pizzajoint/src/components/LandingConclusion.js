@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 import FeatureCards from "./FeatureCards";
-import { section } from "../lib/landingVariants";
+import { section } from "../variants/landingVariants";
 
 const LandingConclusion = ({ currentY }) => {
   const [ref, inView] = useInView();
