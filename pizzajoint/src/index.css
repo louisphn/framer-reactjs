@@ -1,10 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=BioRhyme&display=swap");
 
 html {
   scroll-behavior: smooth;
 }
 
 /* reset & common styles */
+
 body,
 ul,
 h1,
@@ -17,11 +22,12 @@ div {
   margin: 0;
   padding: 0;
   color: #0d0d0d;
-  font-family: "Quicksand";
+  font-family: "Inter";
   letter-spacing: 2px;
   list-style-type: none;
   text-decoration: none;
 }
+
 body {
   position: relative;
   max-width: 100vw;
@@ -29,6 +35,7 @@ body {
   background: #7f5af0;
   overflow: hidden;
 }
+
 button {
   color: #0d0d0d;
   padding: 10px 30px;
@@ -50,6 +57,7 @@ button {
   margin-bottom: 10px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
+
 .container li {
   padding: 10px;
   cursor: pointer;
@@ -61,7 +69,9 @@ button {
   height: 100vh;
   overflow: auto;
 }
+
 /* header */
+
 header {
   position: fixed;
   top: 0;
@@ -72,16 +82,19 @@ header {
   padding: 40px;
   align-items: center;
 }
+
 header .title {
   flex-grow: 1;
   margin-left: 20px;
   font-size: 0.6em;
 }
+
 header h1 {
   color: #fff;
   font-weight: 600;
   padding-bottom: 10px;
 }
+
 header .pizza-svg,
 .order .success-svg {
   width: 80px;
@@ -93,14 +106,17 @@ header .pizza-svg,
 }
 
 /* lists */
+
 li span.active {
   font-weight: bold;
 }
+
 li span.active::before {
   content: ">";
   position: relative;
   top: -2px;
   margin-right: 6px;
+  -webkit-transform: scale(0.8, 1);
   transform: scale(0.8, 1);
   display: inline-block;
 }
@@ -117,6 +133,7 @@ li span.active::before {
 }
 
 /* pages */
+
 .home {
   overflow: hidden;
   display: flex;
@@ -125,15 +142,18 @@ li span.active::before {
   justify-content: center;
   width: clamp(960px, 100vw, 100vw);
 }
+
 .home h2 {
   font-size: 2em;
   margin-bottom: 30px;
 }
+
 .home.container,
 .order.container {
   text-align: center;
   /* max-width: 800px; */
 }
+
 .home button {
   color: #0d0d0d;
   padding: 15px 30px;
@@ -141,11 +161,13 @@ li span.active::before {
   border: 3px solid #0d0d0d;
   margin: 30px 20px;
 }
+
 .order p {
   margin: 20px auto;
 }
 
 /* modal */
+
 .backdrop {
   position: fixed;
   display: flex;
@@ -219,6 +241,7 @@ li span.active::before {
   height: 42px;
   margin-top: 24px;
 }
+
 .next span {
   z-index: 1;
   position: absolute;
@@ -232,12 +255,14 @@ li span.active::before {
   width: 0;
   height: 100%;
 }
+
 .next span:first-child {
   background: #fff;
 }
 
 .next span:last-child {
   z-index: 3;
+  -webkit-backdrop-filter: grayscale(1);
   backdrop-filter: grayscale(1);
 }
 
@@ -281,6 +306,7 @@ li span.active::before {
 .content h2 {
   text-align: left !important;
 }
+
 .cta button {
   margin-left: -12px;
   color: #000;
@@ -298,6 +324,7 @@ li span.active::before {
   background: #f9bc60;
   width: 100%;
   height: 100%;
+  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
   top: 0;
   left: -140px;
@@ -349,9 +376,104 @@ li span.active::before {
 
 .about {
   width: 100vw;
-  height: 100vh;
+  padding: 72px 0;
   background: #2cb67d;
 }
-/* .cta button:first-child::before {
-  background: #fec7d7;
-} */
+
+.text_content {
+  display: flex;
+  text-align: left;
+  position: relative;
+  padding: 56px 24px;
+  overflow: hidden;
+  transition: all 0.3s ease-in;
+}
+
+.introduction h1 {
+  font-family: "Encode Sans";
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+.text_content h2 {
+  width: 30%;
+}
+
+.text_content p {
+  width: 80%;
+}
+
+.feature_card__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 0;
+}
+
+.landing_conclusion h2 {
+  position: absolute;
+  left: 16px;
+  font-size: 4em;
+  font-style: italic;
+  font-family: "BioRhyme";
+}
+
+.feature_card__container ul {
+  width: 50%;
+  height: 100%;
+  padding: 24px 0;
+  overflow: hidden;
+}
+
+.feature_card__contents p,
+h3 {
+  padding: 16px;
+}
+
+.feature_card__contents {
+  text-align: right;
+  width: fit-content;
+  height: 100%;
+  background: #fff;
+  margin: 24px 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in;
+}
+
+.feature_card__contents::before {
+  position: absolute;
+  content: "";
+  background: #fde24f;
+  width: 100%;
+  height: 8px;
+  top: 0;
+  left: -100%;
+  transition: all 0.3s ease-in;
+}
+
+.feature_card__contents:hover {
+  margin-bottom: 32px;
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
+}
+
+.feature_card__contents:hover::before {
+  left: 0;
+}
+
+.feature_card__image {
+  width: 50%;
+  height: 100vh;
+  max-width: 520px;
+  margin: 16px;
+}
+
+.feature_card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.landing_conclusion {
+  width: 100vw;
+  position: relative;
+}

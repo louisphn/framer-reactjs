@@ -5,9 +5,10 @@ export const homeVariants = {
   visible: {
     opacity: 1,
     transition: {
+      when: "beforeChildren",
       delay: 1.5,
-      duration: 1.5,
-      staggerChildren: 1,
+      duration: 0.3,
+      staggerChildren: 0.05,
     },
   },
   exit: {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import { motion, useTransform } from "framer-motion";
 
@@ -18,8 +18,8 @@ const image = {
     x: 80,
     opacity: 1,
     transition: {
-      delay: 4,
-      duration: 1,
+      delay: 3,
+      duration: 0.5,
     },
   },
 };
@@ -36,12 +36,10 @@ const sentence = {
     opacity: 1,
     y: -40,
     transition: {
-      duration: 5,
-      staggerChildren: 0.1,
-      ease: "easeOut",
-      y: {
-        delay: 4,
-      },
+      when: "beforeChildren",
+      delay: 1.5,
+      duration: 0.3,
+      staggerChildren: 0.08,
     },
   },
 };
@@ -68,7 +66,7 @@ const description = {
     opacity: 1,
     y: -40,
     transition: {
-      delay: 4.2,
+      delay: 5,
     },
   },
 };
@@ -92,7 +90,6 @@ const arrow = {
 const Hero = ({ currentY }) => {
   const history = useHistory();
 
-  const [start, setStart] = useState(false);
   const [ref, inView, entry] = useInView();
 
   const rotate = useTransform(currentY, [0, -700], [0, 360]);
@@ -101,19 +98,14 @@ const Hero = ({ currentY }) => {
   const line2 = "Food. It's an";
   const line3 = "Experience.";
 
-  useEffect(() => {
-    setTimeout(() => {
-      setStart(true);
-    }, 3000);
-  }, []);
-
   return (
-    <motion.div className="hero">
+    <div className="hero">
       <div className="content">
         <motion.h2
           variants={sentence}
           ref={ref}
-          animate={inView ? "visible" : "hidden"}
+          initial="hidden"
+          animate={inView && "visible"}
         >
           {line1.split("").map((char, index) => (
             <motion.span key={`${char}-${index}`} variants={letter}>
@@ -135,7 +127,8 @@ const Hero = ({ currentY }) => {
         </motion.h2>
         <motion.p
           variants={description}
-          animate={inView ? "visible" : "hidden"}
+          initial="hidden"
+          animate={inView && "visible"}
         >
           Offer the best PIZZA in the world.
           <br />
@@ -144,7 +137,8 @@ const Hero = ({ currentY }) => {
         <motion.div
           className="cta"
           variants={description}
-          animate={inView ? "visible" : "hidden"}
+          initial="hidden"
+          animate={inView && "visible"}
         >
           {/* <button>Learn More</button> */}
           <button>Order now</button>
@@ -163,13 +157,14 @@ const Hero = ({ currentY }) => {
       <motion.img
         variants={image}
         ref={ref}
-        animate={inView ? "visible" : "hidden"}
+        initial="hidden"
+        animate={inView && "visible"}
         src="pizza.svg"
         width="480"
         height="480"
         style={{ rotate }}
       />
-    </motion.div>
+    </div>
   );
 };
 
