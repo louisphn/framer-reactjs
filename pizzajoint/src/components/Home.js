@@ -1,21 +1,12 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import React from "react";
 import { motion } from "framer-motion";
 
-import Loader from "./Loader";
-import { homeButtonVariants, homeVariants } from "../variants/variants";
+import LandingConclusion from "./LandingConclusion";
+import Hero from "./Hero";
+import TextContent from "./TextContent";
+import { homeVariants } from "../variants/variants";
 
-const Home = () => {
-  const [loading, setLoading] = useState(false);
-  const history = useHistory();
-
-  const handleClick = () => {
-    setLoading(true);
-    setTimeout(() => {
-      history.push("/base");
-      setLoading(false);
-    }, 5000);
-  };
+const Home = ({ currentY }) => {
   return (
     <motion.div
       className="home container"
@@ -24,16 +15,11 @@ const Home = () => {
       animate="visible"
       exit="exit"
     >
-      <h2>Welcome to Pizza Joint</h2>
-      <motion.button
-        onClick={handleClick}
-        variants={homeButtonVariants}
-        animate="visible"
-        whileHover="hover"
-      >
-        Create Your Pizza
-      </motion.button>
-      {loading && <Loader />}
+      <Hero {...{ currentY }} />
+      <div className="about">
+        <TextContent />
+      </div>
+      <LandingConclusion {...{ currentY }} />
     </motion.div>
   );
 };

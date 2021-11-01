@@ -5,8 +5,10 @@ export const homeVariants = {
   visible: {
     opacity: 1,
     transition: {
-      delay: 1,
-      duration: 1.5,
+      when: "beforeChildren",
+      delay: 1.5,
+      duration: 0.3,
+      staggerChildren: 0.05,
     },
   },
   exit: {
@@ -20,7 +22,8 @@ export const homeVariants = {
 
 export const homeButtonVariants = {
   visible: {
-    background: "transparent",
+    background: "#ff8e3c",
+    color: "#fff",
     transition: {
       delay: 2,
     },
