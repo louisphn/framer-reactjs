@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { motion, useTransform } from "framer-motion";
-
 import { useInView } from "react-intersection-observer";
 import { AiOutlineRight } from "react-icons/ai";
+
+import Loading from "./Loading";
 
 const image = {
   hidden: {
@@ -90,6 +91,7 @@ const arrow = {
 const Hero = ({ currentY }) => {
   const history = useHistory();
 
+  const [loading, setLoading] = useState(false);
   const [ref, inView, entry] = useInView();
 
   const rotate = useTransform(currentY, [0, -700], [0, 360]);
@@ -98,8 +100,17 @@ const Hero = ({ currentY }) => {
   const line2 = "Food. It's an";
   const line3 = "Experience.";
 
+  const handleClick = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      history.push("/base");
+    }, 2000);
+  };
+
   return (
     <div className="hero">
+      <Loading isLoading={loading} />
       <div className="content">
         <motion.h2
           variants={sentence}
@@ -141,7 +152,7 @@ const Hero = ({ currentY }) => {
           animate={inView && "visible"}
         >
           {/* <button>Learn More</button> */}
-          <button>Order now</button>
+          <button onClick={() => handleClick()}>Order now</button>
           <motion.div
             variants={learnMore}
             whileHover="hover"
