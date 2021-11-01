@@ -5,88 +5,14 @@ import { useInView } from "react-intersection-observer";
 import { AiOutlineRight } from "react-icons/ai";
 
 import Loading from "./Loading";
-
-const image = {
-  hidden: {
-    x: 0,
-    opacity: 0,
-    transition: {
-      duration: 0.5,
-      delay: 0,
-    },
-  },
-  visible: {
-    x: 80,
-    opacity: 1,
-    transition: {
-      delay: 3,
-      duration: 0.5,
-    },
-  },
-};
-
-const sentence = {
-  hidden: {
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-      delay: 0,
-    },
-  },
-  visible: {
-    opacity: 1,
-    y: -40,
-    transition: {
-      when: "beforeChildren",
-      delay: 1.5,
-      duration: 0.3,
-      staggerChildren: 0.08,
-    },
-  },
-};
-
-const letter = {
-  hidden: {
-    opacity: 0,
-    y: 50,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-  },
-};
-
-const description = {
-  hidden: {
-    textAlign: "left",
-    opacity: 0,
-    y: 0,
-  },
-  visible: {
-    textAlign: "left",
-    opacity: 1,
-    y: -40,
-    transition: {
-      delay: 5,
-    },
-  },
-};
-
-const learnMore = {
-  hover: {
-    x: 8,
-  },
-};
-
-const arrow = {
-  hover: {
-    x: [0, 8],
-    opacity: [1, 0.5],
-    transition: {
-      yoyo: 1,
-    },
-  },
-};
+import {
+  image,
+  sentence,
+  letter,
+  description,
+  arrow,
+  learnMore,
+} from "../lib/heroVariants";
 
 const Hero = ({ currentY }) => {
   const history = useHistory();
