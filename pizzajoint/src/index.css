@@ -517,7 +517,8 @@ li {
 }
 
 .order h2,
-.order p {
+.order p,
+.order li {
   font-family: "Sora";
   color: #fff;
 }

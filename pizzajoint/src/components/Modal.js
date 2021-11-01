@@ -71,7 +71,11 @@ const Modal = ({ showModal, setShowModal }) => {
               *Notice: The displayed order information will not be shown again.
             </p>
             <Link to="/">
-              <motion.button variants={buttonBack} whileHover="hover">
+              <motion.button
+                variants={buttonBack}
+                initial="hidden"
+                whileHover="hover"
+              >
                 Back to homepage
               </motion.button>
             </Link>

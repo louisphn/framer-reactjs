@@ -51,16 +51,16 @@ const Order = ({ pizza, setShowModal }) => {
       <motion.p variants={childVariants}>
         You ordered a {pizza.base} pizza with:
       </motion.p>
-      <motion.div variants={childVariants}>
+      <motion.ul variants={childVariants}>
         <>
           {pizza.toppings.map((topping) => (
-            <div key={topping}>{topping}</div>
+            <li key={topping}>{topping}</li>
           ))}
           <button onClick={() => setShowModal(true)}>
             Order one more pizza?
           </button>
         </>
-      </motion.div>
+      </motion.ul>
     </motion.div>
   );
 };
