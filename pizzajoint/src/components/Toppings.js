@@ -16,6 +16,7 @@ import {
 
 const Toppings = ({ addTopping, pizza }) => {
   const history = useHistory();
+  console.log(pizza.toppings);
 
   let toppings = [
     "mushrooms",
@@ -28,7 +29,7 @@ const Toppings = ({ addTopping, pizza }) => {
 
   return (
     <motion.div
-      className="toppings container"
+      className="base"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -72,19 +73,21 @@ const Toppings = ({ addTopping, pizza }) => {
           );
         })}
       </ul>
-
-      <Link to="/order">
+      {pizza.toppings.length > 0 && (
         <motion.div
           className="next"
           variants={nextVariants}
           initial="hidden"
+          animate="visible"
           whileHover="hover"
         >
-          <motion.span variants={nextColor}></motion.span>
-          <motion.span variants={nextButton}>&#8594;</motion.span>
-          <motion.button variants={buttonVariants}>Next</motion.button>
+          <Link to="/order">
+            <motion.span variants={nextColor}></motion.span>
+            <motion.span variants={nextButton}>&#8594;</motion.span>
+            <motion.button variants={buttonVariants}>Next</motion.button>
+          </Link>
         </motion.div>
-      </Link>
+      )}
     </motion.div>
   );
 };

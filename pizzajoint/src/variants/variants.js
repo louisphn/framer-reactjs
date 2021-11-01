@@ -86,9 +86,11 @@ export const orderContainerVariants = {
 };
 export const listItemVariants = {
   hidden: {
+    scale: 1,
     color: "#fff",
   },
   selected: {
+    scale: 1,
     color: "#fbdd74",
   },
   hover: {

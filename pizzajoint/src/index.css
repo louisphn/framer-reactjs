@@ -105,22 +105,6 @@ header .pizza-svg,
   stroke-linecap: round;
 }
 
-/* lists */
-
-li span.active {
-  font-weight: bold;
-}
-
-li span.active::before {
-  content: ">";
-  position: relative;
-  top: -2px;
-  margin-right: 6px;
-  -webkit-transform: scale(0.8, 1);
-  transform: scale(0.8, 1);
-  display: inline-block;
-}
-
 .back {
   display: flex;
   align-items: center;
@@ -237,7 +221,7 @@ li span.active::before {
 .next {
   position: relative;
   overflow: hidden;
-  width: 104px;
+  width: 112px;
   height: 42px;
   margin-top: 24px;
 }
@@ -269,6 +253,8 @@ li span.active::before {
 .next button {
   border-radius: 0;
   margin-top: 0;
+  border: 1px solid #fff;
+  color: #fff;
 }
 
 .hero {
@@ -489,4 +475,55 @@ h3 {
   justify-content: center;
   background: rgba(0, 0, 0, 0.2);
   z-index: 999;
+}
+
+.base,
+.order {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.base h3,
+li {
+  font-family: "Sora";
+  color: #fff;
+}
+
+.base h3 {
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.base ul {
+  width: 212px;
+}
+
+.base li {
+  cursor: pointer;
+  font-weight: 200;
+  padding: 16px 0;
+  margin-left: 40px;
+}
+
+.base li span.active::before {
+  content: ">";
+  top: -2px;
+  margin-right: 8px;
+  display: inline-block;
+}
+
+.order h2,
+.order p,
+.order li {
+  font-family: "Sora";
+  color: #fff;
+}
+
+.order button {
+  color: #fff;
+  border: 1px solid #fff;
 }
